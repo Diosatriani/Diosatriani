@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
  //     addSeparator();
         Transaksi trans1 = new Transaksi();
         trans1.addBarang(arrBarang[2]);
-        trans1.addBarang(arrBarang[3]); 
+        trans1.addBarang(arrBarang[3]);
         trans1.addBarang(arrBarang[4]);
         trans1.addBarang(arrBarang[5]);
         trans1.addBarang(arrBarang[6]);
