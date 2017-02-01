@@ -21,21 +21,25 @@ public class MainActivity extends AppCompatActivity {
         addSeparator();
 
         initBarang();
-        showString += arrBarang[0].toString();
-        addSeparator();
-        showString += arrBarang[1].toString();
-        addSeparator();
-        showString += arrBarang[2].toString();
-        addSeparator();
-        showString += arrBarang[3].toString();
-        addSeparator();
-        showString += arrBarang[6].toString();
-        addSeparator();
-        showString += arrBarang[7].toString();
-        addSeparator();
-        showString += arrBarang[8].toString();
-        addSeparator();
-        showText.setText(showString);
+ //     showString += arrBarang[0].toString();
+ //     addSeparator();
+ //     showString += arrBarang[1].toString();
+ //     addSeparator();
+        Transaksi trans1 = new Transaksi();
+        trans1.addBarang(arrBarang[2]);
+        trans1.addBarang(arrBarang[3]);
+        trans1.addBarang(arrBarang[4]);
+        trans1.addBarang(arrBarang[5]);
+        trans1.addBarang(arrBarang[6]);
+        trans1.addBarang(arrBarang[7]);
+        trans1.addBarang(arrBarang[8]);
+        showString +=trans1.printTransaksi();
+        showString +="rata-rata harga barang yang dibeli :"+
+            trans1.averageTransaksi();
+
+        showString +=trans1.maxBarang();
+
+      showText.setText(showString);
     }
 
     public void addSeparator(){
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         arrBarang[1] = new Barang("Printer",1, 2000000);
         arrBarang[2] = new Barang("Monitor",1, 5000000);
         arrBarang[3] = new Barang("KeyBoard",1, 200000);
-        arrBarang[4] = new Barang("CPU",1, 7000000);
+        arrBarang[4] = new Barang("CPU",1, 6000000);
         arrBarang[5] = new Barang("Mouse",1, 200000);
         arrBarang[6] = new Barang("Meja",2, 2000000);
         arrBarang[7] = new Barang("Kursi",2, 2000000);
