@@ -9,35 +9,30 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-public class TambahList extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-
+public class TambahList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String [] rating = {"3.5", "6.0", "6.5", "7.0", "7.5", "8.0", "8.5", "9.0", "9.5"};
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_list);
 
-        Spinner spinner = (Spinner) findViewById(R.id.pilihrating);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.pil_rating, android.R.layout.simple_spinner_item);
+        Spinner pilihrating = (Spinner) findViewById(R.id.pilihrating);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, rating);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-    }
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        pilihrating.setAdapter(adapter);
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
-    public void AddFilm(View view){
-        String title = ((EditText) findViewById(R.id.inpjudul)).getText().toString();
-        int year = Integer.parseInt(((EditText) findViewById(R.id.year)).getText().toString());
-        double rating = Double.parseDouble(((Spinner) findViewById(R.id.pilihrating))
-                                                        .getSelectedItem().toString());
-        String description = ((EditText) findViewById(R.id.inpdeskripsi)).getText().toString();
+    public void addFilm(View view){
+        String title = ((EditText) findViewById(R.id.txt_title)).getText().toString();
+        TextView txt_year = ((EditText) findViewById(R.id.txt_year));
+        String str_year = txt_year.getText().toString();
+        int year = Integer.parseInt(str_year);
+        double rating = Double.parseDouble( ((Spinner) findViewById(R.id.pilihrating))
+                .getSelectedItem().toString());
+        String description = ((EditText) findViewById(R.id.txt_description)).getText().toString();
 
         Movie movie = new Movie(title, description, rating, year);
 
@@ -47,3 +42,5 @@ public class TambahList extends AppCompatActivity implements AdapterView.OnItemS
         finish();
     }
 }
+
+

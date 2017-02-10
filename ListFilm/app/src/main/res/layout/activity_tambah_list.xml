@@ -11,67 +11,74 @@
     tools:context="dio.striani.listfilm.TambahList">
 
     <TextView
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:text="Judul"
-        android:layout_width="wrap_content"
+        android:text="Judul Film"
+        android:textSize="10pt"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/inpjudul"
+        android:id="@+id/txt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
-            android:textSize="25dp"
-            android:layout_weight="1"
-            android:text="Tahun"
+            android:text="Publish View"
+            android:textSize="10pt"
+            android:gravity="center_vertical"
+            android:layout_alignParentLeft="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:text="        :"
-            android:layout_width="wrap_content"
+            android:text="  :"
+            android:gravity="center_vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/year"
-            android:layout_weight="1"
-            android:layout_width="250dp"
+            android:id="@+id/txt_year"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
-            android:textSize="25dp"
-            android:layout_weight="1"
             android:text="Rating"
-            android:layout_width="10dp"
+            android:textSize="10pt"
+            android:gravity="center_vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
         <Spinner
             android:id="@+id/pilihrating"
+            android:layout_marginLeft="130dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></Spinner>
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
+
     <TextView
-        android:textStyle="bold"
-        android:textSize="25dp"
-        android:text="Deskripsi :"
+        android:text="Deskripsi"
+        android:textSize="10pt"
+        android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/inpdeskripsi"
+        android:id="@+id/txt_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
     <Button
         android:id="@+id/tambah"
-        android:text="Tambah"
-        android:onClick="AddFilm"
-        android:layout_width="match_parent"
+        android:textSize="10pt"
+        android:onClick="addFilm"
+        android:text="TAMBAH"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
