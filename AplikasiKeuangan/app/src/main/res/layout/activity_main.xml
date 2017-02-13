@@ -14,7 +14,7 @@
         android:id="@+id/main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Selamat Ber Transaksi" />
     <Button
         android:id="@+id/plus"
         android:layout_width="match_parent"
@@ -26,4 +26,5 @@
         android:id="@+id/txt_show"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>
